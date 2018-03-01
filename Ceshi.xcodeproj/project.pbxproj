@@ -38,6 +38,7 @@
 /* Begin PBXFileReference section */
 		4C5B416B2047DC3100C3D04F /* RegularVerification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegularVerification.h; sourceTree = "<group>"; };
 		4C5B416C2047DC3100C3D04F /* RegularVerification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegularVerification.m; sourceTree = "<group>"; };
+		4C5B416E2047E92500C3D04F /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		4C63F84020044E2500276F9D /* Ceshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ceshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C63F84320044E2500276F9D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C63F84420044E2500276F9D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -123,6 +124,7 @@
 				4C63F84E20044E2500276F9D /* LaunchScreen.storyboard */,
 				4C63F85120044E2500276F9D /* Info.plist */,
 				4C63F85220044E2500276F9D /* main.m */,
+				4C5B416E2047E92500C3D04F /* PrefixHeader.pch */,
 			);
 			path = Ceshi;
 			sourceTree = "<group>";
@@ -450,6 +452,7 @@
 					"$(PROJECT_DIR)",
 					"\"$(SRCROOT)\"",
 				);
+				GCC_PREFIX_HEADER = /Users/eslyanbo/Desktop/TestGit/Ceshi/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Equipment.framework\"";
 				INFOPLIST_FILE = Ceshi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -470,6 +473,7 @@
 					"$(PROJECT_DIR)",
 					"\"$(SRCROOT)\"",
 				);
+				GCC_PREFIX_HEADER = /Users/eslyanbo/Desktop/TestGit/Ceshi/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Equipment.framework\"";
 				INFOPLIST_FILE = Ceshi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

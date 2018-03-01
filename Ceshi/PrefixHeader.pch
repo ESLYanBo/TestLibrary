@@ -1,0 +1,274 @@
+//
+//  PrefixHeader.pch
+//  Ceshi
+//
+//  Created by iroycn
+//
+
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//常用字符
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+///<<><>获取屏幕高宽<><><><><>（注释的是支持横竖屏，但我们项目里没有用到，所以注释，只支持ios8以上）
+//#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000 // 当前Xcode支持iOS8及以上
+
+//#define kSCREEN_WIDTH ([[UIScreen mainScreen] respondsToSelector:@selector(nativeBounds)]?[UIScreen mainScreen].nativeBounds.size.width/[UIScreen mainScreen].nativeScale:[UIScreen mainScreen].bounds.size.width)
+//#define kSCREENH_HEIGHT ([[UIScreen mainScreen] respondsToSelector:@selector(nativeBounds)]?[UIScreen mainScreen].nativeBounds.size.height/[UIScreen mainScreen].nativeScale:[UIScreen mainScreen].bounds.size.height)
+//#define kSCREEN_SIZE ([[UIScreen mainScreen] respondsToSelector:@selector(nativeBounds)]?CGSizeMake([UIScreen mainScreen].nativeBounds.size.width/[UIScreen mainScreen].nativeScale,[UIScreen mainScreen].nativeBounds.size.height/[UIScreen mainScreen].nativeScale):[UIScreen mainScreen].bounds.size)
+//#else
+#define kSCREEN_WIDTH   [UIScreen mainScreen].bounds.size.width
+#define kSCREENH_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define kSCREEN_SIZE [UIScreen mainScreen].bounds.size
+//#endif
+///<<><><><><><><><><><><><>
+
+///<<><>缓存<><><><><>
+//#import "TMCache.h"
+#define kSetCache(key,value) [[TMCache sharedCache] setObject:value forKey:key];
+#define kGetCache(key) [[TMCache sharedCache] objectForKey:key];
+#define kRemoveCache(key) [[TMCache sharedCache] removeObjectForKey:key];
+#define kRemoveAllCache [[TMCache sharedCache] removeAllObjects];
+////////////////////////////////////////////////////////////////////
+
+///<<><>获取通知中心<><><><><>
+#define kNotificationCenter [NSNotificationCenter defaultCenter]
+////////////////////////////////////////////////////////////////////
+
+///<<><>设置随机颜色<><><><><>
+#define kRandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0]
+////////////////////////////////////////////////////////////////////
+
+///<///<<><>设置RGB颜色/设置RGBA颜色<><><><><>
+//RGB色系
+#define kColorA(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(r)/255.0 blue:(r)/255.0 alpha:a]
+#define kColor(r, g, b) kColorA(r, g, b, 1.0)
+//16进制 ->#ffffff
+#define kColorHexA(hexValue,a) [UIColor colorWithRed:((float)((hexValue & 0xFF0000) >> 16))/255.0 green:((float)((hexValue & 0xFF00) >> 8))/255.0 blue:((float)(hexValue & 0xFF))/255.0 alpha:a]
+#define kColorHex(hexValue)            kColorHexA(hexValue,1.0)
+//清除
+#define kClearColor [UIColor clearColor]
+////////////////////////////////////////////////////////////////////
+
+///<///<<><>自定义高效率的 NSLog<><><><><>
+
+#ifdef DEBUG
+#define kLog(...) NSLog(@"%s 第%d行 \n %@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
+#else
+#define kLog(...)
+
+#endif
+////////////////////////////////////////////////////////////////////
+
+///<<><>弱引用/强引用<><><><><>
+#define kWeakSelf(type)  __weak typeof(type) weak##type = type;
+#define kStrongSelf(type)  __strong typeof(type) type = weak##type;
+////////////////////////////////////////////////////////////////////
+
+///<///<<><>设置 view 圆角和边框<><><><><>
+
+#define kBorderRadius(View, Radius, Width, Color)\
+\
+[View.layer setCornerRadius:(Radius)];\
+[View.layer setMasksToBounds:YES];\
+[View.layer setBorderWidth:(Width)];\
+[View.layer setBorderColor:[Color CGColor]]
+////////////////////////////////////////////////////////////////////
+
+//#import "MBProgressHUD.h"
+
+///<<><>设置加载提示框（第三方框架：MBProgressHUD）<><><><><>
+
+// 加载
+#define kShowNetworkActivityIndicator() [UIApplication sharedApplication].networkActivityIndicatorVisible = YES
+// 收起加载
+#define HideNetworkActivityIndicator()      [UIApplication sharedApplication].networkActivityIndicatorVisible = NO
+// 设置加载
+#define NetworkActivityIndicatorVisible(x)  [UIApplication sharedApplication].networkActivityIndicatorVisible = x
+//window对象
+#define kWindow [UIApplication sharedApplication].keyWindow
+
+#define kBackView         for (UIView *item in kWindow.subviews) { \
+if(item.tag == 10000) \
+{ \
+    [item removeFromSuperview]; \
+    UIView * aView = [[UIView alloc] init]; \
+    aView.frame = [UIScreen mainScreen].bounds; \
+    aView.tag = 10000; \
+    aView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:1]; \
+    [kWindow addSubview:aView]; \
+} \
+} \
+//MB，在window层显示
+#define kShowHUDAndActivity kBackView;[MBProgressHUD showHUDAddedTo:kWindow animated:YES];kShowNetworkActivityIndicator()
+#define kHiddenHUD [MBProgressHUD hideAllHUDsForView:kWindow animated:YES]
+
+#define kRemoveBackView         for (UIView *item in kWindow.subviews) { \
+if(item.tag == 10000) \
+{ \
+    [UIView animateWithDuration:0.4 animations:^{ \
+        item.alpha = 0.0; \
+    } completion:^(BOOL finished) { \
+        [item removeFromSuperview]; \
+    }]; \
+} \
+} \
+
+#define kHiddenHUDAndAvtivity kRemoveBackView;kHiddenHUD;HideNetworkActivityIndicator()
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>
+///<///<<><><><><><><><><>显示加载菊花
+//我自己写的，显示的位置
+#define kShowHUD(view) kBackView;[MBProgressHUD showHUDAddedTo:view animated:YES];kShowNetworkActivityIndicator()
+//隐藏
+#define kHideHUD(view) [MBProgressHUD hideAllHUDsForView:view animated:YES]
+///<<><><><><><><><><>显示问题提醒
+#define kShowLabel(view,text) MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];\
+hud.labelText = text;\
+hud.mode = MBProgressHUDModeText;\
+hud.removeFromSuperViewOnHide = YES;\
+[hud hide:YES afterDelay:0.7];\
+
+////////////////////////////////////////////////////////////////////
+
+///<<><>获取图片资源<><><><><>
+//读取本地图片
+#define kLoadImage(file,ext) [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:file ofType:ext]]
+//定义UIImage对象
+#define kIMAGE(A) [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:A ofType:nil]]
+//获取图片；前面2种性能比这个高，但这个常用，assets.xcassets里的用这个吧
+#define kImageName(imageName) [UIImage imageNamed:[NSString stringWithFormat:@"%@",imageName]]
+////////////////////////////////////////////////////////////////////
+
+///<<><>获取系统版本<><><><><>
+//获取当前版本
+#define IOS_SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
+//判断 iOS 8 或更高的系统版本
+//#define IOS_VERSION_8_OR_LATER (([[[UIDevice currentDevice] systemVersion] floatValue] >=8.0)? (YES):(NO))
+//等于
+#define IOS_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+//大于
+#define IOS_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+//大于等于
+#define IOS_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+//小于
+#define IOS_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+//小于等于
+#define IOS_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
+////////////////////////////////////////////////////////////////////
+
+// iPhone X
+// UIScreen width.
+#define  LL_ScreenWidth   [UIScreen mainScreen].bounds.size.width
+// UIScreen height.
+#define  LL_ScreenHeight  [UIScreen mainScreen].bounds.size.height
+// iPhone X
+#define  LL_iPhoneX (LL_ScreenWidth == 375.f && LL_ScreenHeight == 812.f ? YES : NO)
+// Status bar height.
+#define  LL_StatusBarHeight      (LL_iPhoneX ? 44.f : 20.f)
+// Navigation bar height.
+#define  LL_NavigationBarHeight  44.f
+// Tabbar height.
+#define  LL_TabbarHeight         (LL_iPhoneX ? (49.f+34.f) : 49.f)
+// Tabbar safe bottom margin.
+#define  LL_TabbarSafeBottomMargin         (LL_iPhoneX ? 34.f : 0.f)
+// Status bar & navigation bar height.
+#define  LL_StatusBarAndNavigationBarHeight  (LL_iPhoneX ? 88.f : 64.f)
+
+#define LL_ViewSafeAreInsets(view) ({UIEdgeInsets insets; if(@available(iOS 11.0, *)) {insets = view.safeAreaInsets;} else {insets = UIEdgeInsetsZero;} insets;})
+
+///<///<<><>判断是真机还是模拟器<><><><><>
+#if TARGET_OS_IPHONE
+//iPhone Device
+#endif
+
+#if TARGET_IPHONE_SIMULATOR
+//iPhone Simulator
+#endif
+////////////////////////////////////////////////////////////////////
+
+///<///<<><>沙盒目录文件<><><><><>
+
+//获取temp
+#define kPathTemp NSTemporaryDirectory()
+
+//获取沙盒 Document
+#define kPathDocument [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]
+
+//获取沙盒 Cache
+#define kPathCache [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
+
+////////////////////////////////////////////////////////////////////
+
+///<///<<><>Frame操作相关<><><><><>/
+//获取垂直居中的x（父的高度/2-子的高度/2）
+#define CENTER_VERTICALLY(parent,child) floor((parent.frame.size.height - child.frame.size.height) / 2)
+//获取水平居中的y（父的宽度/2-子的宽度/2）
+#define CENTER_HORIZONTALLY(parent,child) floor((parent.frame.size.width - child.frame.size.width) / 2)
+
+// example: [[UIView alloc] initWithFrame:(CGRect){CENTER_IN_PARENT(parentView,500,500),CGSizeMake(500,500)}];
+#define CENTER_IN_PARENT(parent,childWidth,childHeight) CGPointMake(floor((parent.frame.size.width - childWidth) / 2),floor((parent.frame.size.height - childHeight) / 2))
+#define CENTER_IN_PARENT_X(parent,childWidth) floor((parent.frame.size.width - childWidth) / 2)
+#define CENTER_IN_PARENT_Y(parent,childHeight) floor((parent.frame.size.height - childHeight) / 2)
+//view的宽度
+#define WIDTH(view) view.frame.size.width
+//view的高度
+#define HEIGHT(view) view.frame.size.height
+//view的x
+#define X(view) view.frame.origin.x
+//view的y
+#define Y(view) view.frame.origin.y
+//view的x
+#define LEFT(view) view.frame.origin.x
+//view的y
+#define TOP(view) view.frame.origin.y
+//view的bottom的y
+#define BOTTOM(view) (view.frame.origin.y + view.frame.size.height)
+//view的right的x
+#define RIGHT(view) (view.frame.origin.x + view.frame.size.width)
+
+////////////////////////////////////////////////////////////////////
+
+///<<><>定义UIFont，默认system<><><><><>
+#define FONT(F) [UIFont systemFontOfSize:F]
+////////////////////////////////////////////////////////////////////
+
+///<<><NSUserDefaults 实例化<><><><><>
+#define USER_DEFAULT [NSUserDefaults standardUserDefaults]
+////////////////////////////////////////////////////////////////////
+
+///<<>初始化一个普通的alert view<><><><><>
+#define kALERT(info)\
+UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:info delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];\
+[alert show];
+////////////////////////////////////////////////////////////////////
+
+///<<><NSUserDefaults 实例化<><><><><>
+////////////////////////////////////////////////////////////////////
+
+///<///<<><NSUserDefaults 实例化<><><><><>
+////////////////////////////////////////////////////////////////////
+
+///<///<<><NSUserDefaults 实例化<><><><><>
+////////////////////////////////////////////////////////////////////
+
+///<<><NSUserDefaults 实例化<><><><><>
+////////////////////////////////////////////////////////////////////
+
+///<///<<><NSUserDefaults 实例化<><><><><>
+////////////////////////////////////////////////////////////////////
+
+///<///<<><NSUserDefaults 实例化<><><><><>
+////////////////////////////////////////////////////////////////////
+
+///<///<<><NSUserDefaults 实例化<><><><><>
+////////////////////////////////////////////////////////////////////
+
+
+
+#endif /* PrefixHeader_pch */
+
