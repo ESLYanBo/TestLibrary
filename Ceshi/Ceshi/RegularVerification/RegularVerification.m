@@ -7,7 +7,7 @@
 //
 
 #import "RegularVerification.h"
-
+//正则匹配
 @implementation RegularVerification
 
 
