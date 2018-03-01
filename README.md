@@ -1,6 +1,6 @@
 # TestLibrary
 测试Git和第一个项目
-‘’‘
+```
 这里第一版是某些正则表达式的判定。
 #pragma 正则匹配手机号
 +(BOOL)checkTelNumber:(NSString *) telNumber;
@@ -15,4 +15,4 @@
 + (BOOL)checkUserEmail:(NSString *)email;
 #pragma 正则匹配银行卡号
 + (BOOL)checkUserBankNumber:(NSString *)BankNumber;
-’‘’
+```
