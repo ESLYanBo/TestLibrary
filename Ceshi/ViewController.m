@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "RegularVerification.h"
+#import <YDTDeviceFingerPrint/YDTMobClickManager.h>
 @interface ViewController ()
 
 @end
