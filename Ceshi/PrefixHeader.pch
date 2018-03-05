@@ -76,7 +76,9 @@
 [View.layer setCornerRadius:(Radius)];\
 [View.layer setMasksToBounds:YES];\
 [View.layer setBorderWidth:(Width)];\
-[View.layer setBorderColor:[Color CGColor]]
+[View.layer setBorderColor:[UIColor Color].CGColor];
+
+
 ////////////////////////////////////////////////////////////////////
 
 //#import "MBProgressHUD.h"
