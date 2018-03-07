@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "RegularVerification.h"
+
 @interface ViewController ()
 
 @end
@@ -25,6 +26,8 @@
     }else{
         NSLog(@"NO");
     }
+    
+    
 }
 
 

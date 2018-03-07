@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C5B416D2047DC3100C3D04F /* RegularVerification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B416C2047DC3100C3D04F /* RegularVerification.m */; };
 		4C63F84520044E2500276F9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C63F84420044E2500276F9D /* AppDelegate.m */; };
 		4C63F84820044E2500276F9D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C63F84720044E2500276F9D /* ViewController.m */; };
 		4C63F84B20044E2500276F9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C63F84920044E2500276F9D /* Main.storyboard */; };
@@ -16,6 +15,13 @@
 		4C63F85320044E2500276F9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C63F85220044E2500276F9D /* main.m */; };
 		4C63F85D20044E2500276F9D /* CeshiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C63F85C20044E2500276F9D /* CeshiTests.m */; };
 		4C63F86820044E2500276F9D /* CeshiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C63F86720044E2500276F9D /* CeshiUITests.m */; };
+		4C6507B4204F7EA700036C7F /* YBHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6507A4204F7EA700036C7F /* YBHTTPSessionManager.m */; };
+		4C6507B5204F7EA700036C7F /* YBNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6507A7204F7EA700036C7F /* YBNetworkReachabilityManager.m */; };
+		4C6507B6204F7EA700036C7F /* YBSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6507A9204F7EA700036C7F /* YBSecurityPolicy.m */; };
+		4C6507B7204F7EA700036C7F /* YBURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6507AB204F7EA700036C7F /* YBURLRequestSerialization.m */; };
+		4C6507B8204F7EA700036C7F /* YBURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6507AD204F7EA700036C7F /* YBURLResponseSerialization.m */; };
+		4C6507B9204F7EA700036C7F /* YBURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6507AF204F7EA700036C7F /* YBURLSessionManager.m */; };
+		4C6507BA204F7EA700036C7F /* RegularVerification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6507B3204F7EA700036C7F /* RegularVerification.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +42,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4C5B416B2047DC3100C3D04F /* RegularVerification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegularVerification.h; sourceTree = "<group>"; };
-		4C5B416C2047DC3100C3D04F /* RegularVerification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegularVerification.m; sourceTree = "<group>"; };
 		4C5B416E2047E92500C3D04F /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		4C63F84020044E2500276F9D /* Ceshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ceshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C63F84320044E2500276F9D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,6 +59,21 @@
 		4C63F86320044E2500276F9D /* CeshiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CeshiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C63F86720044E2500276F9D /* CeshiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CeshiUITests.m; sourceTree = "<group>"; };
 		4C63F86920044E2500276F9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C6507A3204F7EA700036C7F /* YBHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBHTTPSessionManager.h; sourceTree = "<group>"; };
+		4C6507A4204F7EA700036C7F /* YBHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBHTTPSessionManager.m; sourceTree = "<group>"; };
+		4C6507A5204F7EA700036C7F /* YBNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBNetworking.h; sourceTree = "<group>"; };
+		4C6507A6204F7EA700036C7F /* YBNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		4C6507A7204F7EA700036C7F /* YBNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		4C6507A8204F7EA700036C7F /* YBSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBSecurityPolicy.h; sourceTree = "<group>"; };
+		4C6507A9204F7EA700036C7F /* YBSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBSecurityPolicy.m; sourceTree = "<group>"; };
+		4C6507AA204F7EA700036C7F /* YBURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBURLRequestSerialization.h; sourceTree = "<group>"; };
+		4C6507AB204F7EA700036C7F /* YBURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBURLRequestSerialization.m; sourceTree = "<group>"; };
+		4C6507AC204F7EA700036C7F /* YBURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBURLResponseSerialization.h; sourceTree = "<group>"; };
+		4C6507AD204F7EA700036C7F /* YBURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBURLResponseSerialization.m; sourceTree = "<group>"; };
+		4C6507AE204F7EA700036C7F /* YBURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBURLSessionManager.h; sourceTree = "<group>"; };
+		4C6507AF204F7EA700036C7F /* YBURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBURLSessionManager.m; sourceTree = "<group>"; };
+		4C6507B2204F7EA700036C7F /* RegularVerification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegularVerification.h; sourceTree = "<group>"; };
+		4C6507B3204F7EA700036C7F /* RegularVerification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegularVerification.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,15 +101,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4C5B416A2047DC3100C3D04F /* RegularVerification */ = {
-			isa = PBXGroup;
-			children = (
-				4C5B416B2047DC3100C3D04F /* RegularVerification.h */,
-				4C5B416C2047DC3100C3D04F /* RegularVerification.m */,
-			);
-			path = RegularVerification;
-			sourceTree = "<group>";
-		};
 		4C63F83720044E2500276F9D = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +124,7 @@
 		4C63F84220044E2500276F9D /* Ceshi */ = {
 			isa = PBXGroup;
 			children = (
-				4C5B416A2047DC3100C3D04F /* RegularVerification */,
+				4C6507A0204F7EA700036C7F /* ThirdParty */,
 				4C63F84320044E2500276F9D /* AppDelegate.h */,
 				4C63F84420044E2500276F9D /* AppDelegate.m */,
 				4C63F84620044E2500276F9D /* ViewController.h */,
@@ -145,6 +155,60 @@
 				4C63F86920044E2500276F9D /* Info.plist */,
 			);
 			path = CeshiUITests;
+			sourceTree = "<group>";
+		};
+		4C6507A0204F7EA700036C7F /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				4C6507A1204F7EA700036C7F /* HTTPTool */,
+				4C6507B0204F7EA700036C7F /* OtherTool */,
+			);
+			path = ThirdParty;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C6507A1204F7EA700036C7F /* HTTPTool */ = {
+			isa = PBXGroup;
+			children = (
+				4C6507A2204F7EA700036C7F /* YBNetworking */,
+			);
+			path = HTTPTool;
+			sourceTree = "<group>";
+		};
+		4C6507A2204F7EA700036C7F /* YBNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				4C6507A3204F7EA700036C7F /* YBHTTPSessionManager.h */,
+				4C6507A4204F7EA700036C7F /* YBHTTPSessionManager.m */,
+				4C6507A5204F7EA700036C7F /* YBNetworking.h */,
+				4C6507A6204F7EA700036C7F /* YBNetworkReachabilityManager.h */,
+				4C6507A7204F7EA700036C7F /* YBNetworkReachabilityManager.m */,
+				4C6507A8204F7EA700036C7F /* YBSecurityPolicy.h */,
+				4C6507A9204F7EA700036C7F /* YBSecurityPolicy.m */,
+				4C6507AA204F7EA700036C7F /* YBURLRequestSerialization.h */,
+				4C6507AB204F7EA700036C7F /* YBURLRequestSerialization.m */,
+				4C6507AC204F7EA700036C7F /* YBURLResponseSerialization.h */,
+				4C6507AD204F7EA700036C7F /* YBURLResponseSerialization.m */,
+				4C6507AE204F7EA700036C7F /* YBURLSessionManager.h */,
+				4C6507AF204F7EA700036C7F /* YBURLSessionManager.m */,
+			);
+			path = YBNetworking;
+			sourceTree = "<group>";
+		};
+		4C6507B0204F7EA700036C7F /* OtherTool */ = {
+			isa = PBXGroup;
+			children = (
+				4C6507B1204F7EA700036C7F /* RegularVerification */,
+			);
+			path = OtherTool;
+			sourceTree = "<group>";
+		};
+		4C6507B1204F7EA700036C7F /* RegularVerification */ = {
+			isa = PBXGroup;
+			children = (
+				4C6507B2204F7EA700036C7F /* RegularVerification.h */,
+				4C6507B3204F7EA700036C7F /* RegularVerification.m */,
+			);
+			path = RegularVerification;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,10 +344,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C6507B6204F7EA700036C7F /* YBSecurityPolicy.m in Sources */,
+				4C6507B9204F7EA700036C7F /* YBURLSessionManager.m in Sources */,
 				4C63F84820044E2500276F9D /* ViewController.m in Sources */,
-				4C5B416D2047DC3100C3D04F /* RegularVerification.m in Sources */,
+				4C6507BA204F7EA700036C7F /* RegularVerification.m in Sources */,
+				4C6507B8204F7EA700036C7F /* YBURLResponseSerialization.m in Sources */,
+				4C6507B7204F7EA700036C7F /* YBURLRequestSerialization.m in Sources */,
+				4C6507B5204F7EA700036C7F /* YBNetworkReachabilityManager.m in Sources */,
 				4C63F85320044E2500276F9D /* main.m in Sources */,
 				4C63F84520044E2500276F9D /* AppDelegate.m in Sources */,
+				4C6507B4204F7EA700036C7F /* YBHTTPSessionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
