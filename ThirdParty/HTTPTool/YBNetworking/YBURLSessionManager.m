@@ -1,4 +1,6 @@
-
+//  Created by 王晨辉 on 2018/1/9.
+//  Copyright © 2018年 王晨辉. All rights reserved.
+//
 
 #import "YBURLSessionManager.h"
 #import <objc/runtime.h>
@@ -48,7 +50,7 @@ static dispatch_group_t url_session_manager_completion_group() {
     return af_url_session_manager_completion_group;
 }
 
-NSString * const NetworkingTaskDidResumeNotification = @"com.alamofire.networking.task.resume";
+NSString * const YBNetworkingTaskDidResumeNotification = @"com.alamofire.networking.task.resume";
 NSString * const YBNetworkingTaskDidCompleteNotification = @"com.alamofire.networking.task.complete";
 NSString * const YBNetworkingTaskDidSuspendNotification = @"com.alamofire.networking.task.suspend";
 NSString * const YBURLSessionDidInvalidateNotification = @"com.alamofire.networking.session.invalidate";
@@ -475,7 +477,7 @@ static NSString * const YBNSURLSessionTaskDidSuspendNotification = @"com.alamofi
     if ([task respondsToSelector:@selector(taskDescription)]) {
         if ([task.taskDescription isEqualToString:self.taskDescriptionForSessionTasks]) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [[NSNotificationCenter defaultCenter] postNotificationName:NetworkingTaskDidResumeNotification object:task];
+                [[NSNotificationCenter defaultCenter] postNotificationName:YBNetworkingTaskDidResumeNotification object:task];
             });
         }
     }

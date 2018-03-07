@@ -1,4 +1,6 @@
-
+//  Created by 王晨辉 on 2018/1/9.
+//  Copyright © 2018年 王晨辉. All rights reserved.
+//
 #import "YBURLRequestSerialization.h"
 
 #if TARGET_OS_IOS || TARGET_OS_WATCH || TARGET_OS_TV
