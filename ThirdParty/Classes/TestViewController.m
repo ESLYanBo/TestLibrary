@@ -1,6 +1,6 @@
 //
 //  TestViewController.m
-//  BRPickerViewDemo
+//  YBPickerViewDemo
 //
 //  Created by 王晨辉 on 2018/3/1.
 //  Copyright © 2018年 王晨辉. All rights reserved.
@@ -8,28 +8,28 @@
 //  最新代码下载地址：https://github.com/ESLYanBo/TestLibrary.git
 
 #import "TestViewController.h"
-#import "BRPickerView.h"
-#import "BRTextField.h"
-#import "NSDate+BRAdd.h"
+#import "YBPickerView.h"
+#import "YBTextField.h"
+#import "NSDate+YBAdd.h"
 
 @interface TestViewController ()<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 /** 姓名 */
-@property (nonatomic, strong) BRTextField *nameTF;
+@property (nonatomic, strong) YBTextField *nameTF;
 /** 性别 */
-@property (nonatomic, strong) BRTextField *genderTF;
+@property (nonatomic, strong) YBTextField *genderTF;
 /** 出生年月 */
-@property (nonatomic, strong) BRTextField *birthdayTF;
+@property (nonatomic, strong) YBTextField *birthdayTF;
 /** 出生时刻 */
-@property (nonatomic, strong) BRTextField *birthtimeTF;
+@property (nonatomic, strong) YBTextField *birthtimeTF;
 /** 联系方式 */
-@property (nonatomic, strong) BRTextField *phoneTF;
+@property (nonatomic, strong) YBTextField *phoneTF;
 /** 地区 */
-@property (nonatomic, strong) BRTextField *addressTF;
+@property (nonatomic, strong) YBTextField *addressTF;
 /** 学历 */
-@property (nonatomic, strong) BRTextField *educationTF;
+@property (nonatomic, strong) YBTextField *educationTF;
 /** 其它 */
-@property (nonatomic, strong) BRTextField *otherTF;
+@property (nonatomic, strong) YBTextField *otherTF;
 
 @property (nonatomic, strong) NSArray *titleArr;
 
@@ -148,8 +148,8 @@
     return 50;
 }
 
-- (BRTextField *)getTextField:(UITableViewCell *)cell {
-    BRTextField *textField = [[BRTextField alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 230, 0, 200, 50)];
+- (YBTextField *)getTextField:(UITableViewCell *)cell {
+    YBTextField *textField = [[YBTextField alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 230, 0, 200, 50)];
     textField.backgroundColor = [UIColor clearColor];
     textField.font = [UIFont systemFontOfSize:16.0f];
     textField.textAlignment = NSTextAlignmentRight;
@@ -176,7 +176,7 @@
         _genderTF.placeholder = @"请选择";
         __weak typeof(self) weakSelf = self;
         _genderTF.tapAcitonBlock = ^{
-            [BRStringPickerView showStringPickerWithTitle:@"宝宝性别" dataSource:@[@"男", @"女", @"其他"] defaultSelValue:@"男" isAutoSelect:YES resultBlock:^(id selectValue) {
+            [YBStringPickerView showStringPickerWithTitle:@"宝宝性别" dataSource:@[@"男", @"女", @"其他"] defaultSelValue:@"男" isAutoSelect:YES resultBlock:^(id selectValue) {
                 weakSelf.genderTF.text = selectValue;
             }];
         };
@@ -190,7 +190,7 @@
         _birthdayTF.placeholder = @"请选择";
         __weak typeof(self) weakSelf = self;
         _birthdayTF.tapAcitonBlock = ^{
-            [BRDatePickerView showDatePickerWithTitle:@"出生年月" dateType:UIDatePickerModeDate defaultSelValue:weakSelf.birthdayTF.text minDateStr:@"" maxDateStr:[NSDate currentDateString] isAutoSelect:YES resultBlock:^(NSString *selectValue) {
+            [YBDatePickerView showDatePickerWithTitle:@"出生年月" dateType:UIDatePickerModeDate defaultSelValue:weakSelf.birthdayTF.text minDateStr:@"" maxDateStr:[NSDate currentDateString] isAutoSelect:YES resultBlock:^(NSString *selectValue) {
                 weakSelf.birthdayTF.text = selectValue;
             }];
         };
@@ -204,7 +204,7 @@
         _birthtimeTF.placeholder = @"请选择";
         __weak typeof(self) weakSelf = self;
         _birthtimeTF.tapAcitonBlock = ^{
-            [BRDatePickerView showDatePickerWithTitle:@"出生时刻" dateType:UIDatePickerModeTime defaultSelValue:weakSelf.birthtimeTF.text minDateStr:@"" maxDateStr:@"" isAutoSelect:YES resultBlock:^(NSString *selectValue) {
+            [YBDatePickerView showDatePickerWithTitle:@"出生时刻" dateType:UIDatePickerModeTime defaultSelValue:weakSelf.birthtimeTF.text minDateStr:@"" maxDateStr:@"" isAutoSelect:YES resultBlock:^(NSString *selectValue) {
                 weakSelf.birthtimeTF.text = selectValue;
             }];
         };
@@ -229,7 +229,7 @@
         _addressTF.placeholder = @"请选择";
         __weak typeof(self) weakSelf = self;
         _addressTF.tapAcitonBlock = ^{
-            [BRAddressPickerView showAddressPickerWithDefaultSelected:@[@10, @0, @3] isAutoSelect:YES resultBlock:^(NSArray *selectAddressArr) {
+            [YBAddressPickerView showAddressPickerWithDefaultSelected:@[@10, @0, @3] isAutoSelect:YES resultBlock:^(NSArray *selectAddressArr) {
                 weakSelf.addressTF.text = [NSString stringWithFormat:@"%@%@%@", selectAddressArr[0], selectAddressArr[1], selectAddressArr[2]];
             }];
         };
@@ -243,7 +243,7 @@
         _educationTF.placeholder = @"请选择";
         __weak typeof(self) weakSelf = self;
         _educationTF.tapAcitonBlock = ^{
-            [BRStringPickerView showStringPickerWithTitle:@"学历" dataSource:@[@"大专以下", @"大专", @"本科", @"硕士", @"博士", @"博士后"] defaultSelValue:@"本科" isAutoSelect:YES resultBlock:^(id selectValue) {
+            [YBStringPickerView showStringPickerWithTitle:@"学历" dataSource:@[@"大专以下", @"大专", @"本科", @"硕士", @"博士", @"博士后"] defaultSelValue:@"本科" isAutoSelect:YES resultBlock:^(id selectValue) {
                 weakSelf.educationTF.text = selectValue;
             }];
         };
@@ -258,7 +258,7 @@
         __weak typeof(self) weakSelf = self;
         _otherTF.tapAcitonBlock = ^{
             NSArray *dataSources = @[@[@"第1周", @"第2周", @"第3周", @"第4周", @"第5周", @"第6周", @"第7周"], @[@"第1天", @"第2天", @"第3天", @"第4天", @"第5天", @"第6天", @"第7天"]];
-            [BRStringPickerView showStringPickerWithTitle:@"自定义多列字符串" dataSource:dataSources defaultSelValue:@[@"第3周", @"第3天"] isAutoSelect:YES resultBlock:^(id selectValue) {
+            [YBStringPickerView showStringPickerWithTitle:@"自定义多列字符串" dataSource:dataSources defaultSelValue:@[@"第3周", @"第3天"] isAutoSelect:YES resultBlock:^(id selectValue) {
                 weakSelf.otherTF.text = [NSString stringWithFormat:@"%@，%@", selectValue[0], selectValue[1]];
             }];
         };

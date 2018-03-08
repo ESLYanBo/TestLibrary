@@ -1,15 +1,15 @@
 //
-//  BRAddressModel.m
-//  BRPickerViewDemo
+//  YBAddressModel.m
+//  YBPickerViewDemo
 //
 //  Created by 王晨辉 on 2018/3/1.
 //  Copyright © 2018年 王晨辉. All rights reserved.
 //
 //  最新代码下载地址：https://github.com/ESLYanBo/TestLibrary.git
 
-#import "BRAddressModel.h"
+#import "YBAddressModel.h"
 
-@implementation BRProvinceModel
+@implementation YBProvinceModel
 
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{
@@ -20,14 +20,14 @@
 
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{
-             @"city": [BRCityModel class]
+             @"city": [YBCityModel class]
              };
 }
 
 @end
 
 
-@implementation BRCityModel
+@implementation YBCityModel
 
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{
@@ -38,14 +38,14 @@
 
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{
-             @"town": [BRTownModel class]
+             @"town": [YBTownModel class]
              };
 }
 
 @end
 
 
-@implementation BRTownModel
+@implementation YBTownModel
 
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{

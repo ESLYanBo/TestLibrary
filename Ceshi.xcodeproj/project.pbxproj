@@ -22,15 +22,15 @@
 		4C6507B8204F7EA700036C7F /* YBURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6507AD204F7EA700036C7F /* YBURLResponseSerialization.m */; };
 		4C6507B9204F7EA700036C7F /* YBURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6507AF204F7EA700036C7F /* YBURLSessionManager.m */; };
 		4C6507BA204F7EA700036C7F /* RegularVerification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6507B3204F7EA700036C7F /* RegularVerification.m */; };
-		4C7333712051147E00A1D6F0 /* BRTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C73336C2051147E00A1D6F0 /* BRTextField.m */; };
-		4C7333722051147E00A1D6F0 /* NSDate+BRAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C73336E2051147E00A1D6F0 /* NSDate+BRAdd.m */; };
+		4C7333712051147E00A1D6F0 /* YBTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C73336C2051147E00A1D6F0 /* YBTextField.m */; };
+		4C7333722051147E00A1D6F0 /* NSDate+YBAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C73336E2051147E00A1D6F0 /* NSDate+YBAdd.m */; };
 		4C7333732051147E00A1D6F0 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7333702051147E00A1D6F0 /* TestViewController.m */; };
-		4C73338C2051148800A1D6F0 /* BRAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7333772051148800A1D6F0 /* BRAddressModel.m */; };
-		4C73338D2051148800A1D6F0 /* BRAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7333792051148800A1D6F0 /* BRAddressPickerView.m */; };
-		4C73338E2051148800A1D6F0 /* BRCity.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C73337A2051148800A1D6F0 /* BRCity.plist */; };
+		4C73338C2051148800A1D6F0 /* YBAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7333772051148800A1D6F0 /* YBAddressModel.m */; };
+		4C73338D2051148800A1D6F0 /* YBAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7333792051148800A1D6F0 /* YBAddressPickerView.m */; };
+		4C73338E2051148800A1D6F0 /* YBCity.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C73337A2051148800A1D6F0 /* YBCity.plist */; };
 		4C73338F2051148800A1D6F0 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C73337D2051148800A1D6F0 /* BaseView.m */; };
-		4C7333902051148800A1D6F0 /* BRDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7333812051148800A1D6F0 /* BRDatePickerView.m */; };
-		4C7333912051148800A1D6F0 /* BRStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7333842051148800A1D6F0 /* BRStringPickerView.m */; };
+		4C7333902051148800A1D6F0 /* YBDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7333812051148800A1D6F0 /* YBDatePickerView.m */; };
+		4C7333912051148800A1D6F0 /* YBStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7333842051148800A1D6F0 /* YBStringPickerView.m */; };
 		4C7333922051148800A1D6F0 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7333882051148800A1D6F0 /* NSObject+YYModel.m */; };
 		4C7333932051148800A1D6F0 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C73338A2051148800A1D6F0 /* YYClassInfo.m */; };
 /* End PBXBuildFile section */
@@ -85,24 +85,24 @@
 		4C6507AF204F7EA700036C7F /* YBURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBURLSessionManager.m; sourceTree = "<group>"; };
 		4C6507B2204F7EA700036C7F /* RegularVerification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegularVerification.h; sourceTree = "<group>"; };
 		4C6507B3204F7EA700036C7F /* RegularVerification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegularVerification.m; sourceTree = "<group>"; };
-		4C73336B2051147E00A1D6F0 /* BRTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRTextField.h; sourceTree = "<group>"; };
-		4C73336C2051147E00A1D6F0 /* BRTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRTextField.m; sourceTree = "<group>"; };
-		4C73336D2051147E00A1D6F0 /* NSDate+BRAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+BRAdd.h"; sourceTree = "<group>"; };
-		4C73336E2051147E00A1D6F0 /* NSDate+BRAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+BRAdd.m"; sourceTree = "<group>"; };
+		4C73336B2051147E00A1D6F0 /* YBTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBTextField.h; sourceTree = "<group>"; };
+		4C73336C2051147E00A1D6F0 /* YBTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBTextField.m; sourceTree = "<group>"; };
+		4C73336D2051147E00A1D6F0 /* NSDate+YBAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+YBAdd.h"; sourceTree = "<group>"; };
+		4C73336E2051147E00A1D6F0 /* NSDate+YBAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YBAdd.m"; sourceTree = "<group>"; };
 		4C73336F2051147E00A1D6F0 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		4C7333702051147E00A1D6F0 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
-		4C7333762051148800A1D6F0 /* BRAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRAddressModel.h; sourceTree = "<group>"; };
-		4C7333772051148800A1D6F0 /* BRAddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRAddressModel.m; sourceTree = "<group>"; };
-		4C7333782051148800A1D6F0 /* BRAddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRAddressPickerView.h; sourceTree = "<group>"; };
-		4C7333792051148800A1D6F0 /* BRAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRAddressPickerView.m; sourceTree = "<group>"; };
-		4C73337A2051148800A1D6F0 /* BRCity.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BRCity.plist; sourceTree = "<group>"; };
+		4C7333762051148800A1D6F0 /* YBAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBAddressModel.h; sourceTree = "<group>"; };
+		4C7333772051148800A1D6F0 /* YBAddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBAddressModel.m; sourceTree = "<group>"; };
+		4C7333782051148800A1D6F0 /* YBAddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBAddressPickerView.h; sourceTree = "<group>"; };
+		4C7333792051148800A1D6F0 /* YBAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBAddressPickerView.m; sourceTree = "<group>"; };
+		4C73337A2051148800A1D6F0 /* YBCity.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = YBCity.plist; sourceTree = "<group>"; };
 		4C73337C2051148800A1D6F0 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
 		4C73337D2051148800A1D6F0 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
-		4C73337E2051148800A1D6F0 /* BRPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRPickerView.h; sourceTree = "<group>"; };
-		4C7333802051148800A1D6F0 /* BRDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDatePickerView.h; sourceTree = "<group>"; };
-		4C7333812051148800A1D6F0 /* BRDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDatePickerView.m; sourceTree = "<group>"; };
-		4C7333832051148800A1D6F0 /* BRStringPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRStringPickerView.h; sourceTree = "<group>"; };
-		4C7333842051148800A1D6F0 /* BRStringPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRStringPickerView.m; sourceTree = "<group>"; };
+		4C73337E2051148800A1D6F0 /* YBPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPickerView.h; sourceTree = "<group>"; };
+		4C7333802051148800A1D6F0 /* YBDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBDatePickerView.h; sourceTree = "<group>"; };
+		4C7333812051148800A1D6F0 /* YBDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBDatePickerView.m; sourceTree = "<group>"; };
+		4C7333832051148800A1D6F0 /* YBStringPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBStringPickerView.h; sourceTree = "<group>"; };
+		4C7333842051148800A1D6F0 /* YBStringPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBStringPickerView.m; sourceTree = "<group>"; };
 		4C7333872051148800A1D6F0 /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
 		4C7333882051148800A1D6F0 /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
 		4C7333892051148800A1D6F0 /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
@@ -250,10 +250,10 @@
 		4C73336A2051147E00A1D6F0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4C73336B2051147E00A1D6F0 /* BRTextField.h */,
-				4C73336C2051147E00A1D6F0 /* BRTextField.m */,
-				4C73336D2051147E00A1D6F0 /* NSDate+BRAdd.h */,
-				4C73336E2051147E00A1D6F0 /* NSDate+BRAdd.m */,
+				4C73336B2051147E00A1D6F0 /* YBTextField.h */,
+				4C73336C2051147E00A1D6F0 /* YBTextField.m */,
+				4C73336D2051147E00A1D6F0 /* NSDate+YBAdd.h */,
+				4C73336E2051147E00A1D6F0 /* NSDate+YBAdd.m */,
 				4C73336F2051147E00A1D6F0 /* TestViewController.h */,
 				4C7333702051147E00A1D6F0 /* TestViewController.m */,
 			);
@@ -266,7 +266,7 @@
 			children = (
 				4C7333752051148800A1D6F0 /* AddressPickerView */,
 				4C73337B2051148800A1D6F0 /* Base */,
-				4C73337E2051148800A1D6F0 /* BRPickerView.h */,
+				4C73337E2051148800A1D6F0 /* YBPickerView.h */,
 				4C73337F2051148800A1D6F0 /* DatePickerView */,
 				4C7333822051148800A1D6F0 /* StringPickerView */,
 				4C7333852051148800A1D6F0 /* Vendor */,
@@ -277,11 +277,11 @@
 		4C7333752051148800A1D6F0 /* AddressPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				4C7333762051148800A1D6F0 /* BRAddressModel.h */,
-				4C7333772051148800A1D6F0 /* BRAddressModel.m */,
-				4C7333782051148800A1D6F0 /* BRAddressPickerView.h */,
-				4C7333792051148800A1D6F0 /* BRAddressPickerView.m */,
-				4C73337A2051148800A1D6F0 /* BRCity.plist */,
+				4C7333762051148800A1D6F0 /* YBAddressModel.h */,
+				4C7333772051148800A1D6F0 /* YBAddressModel.m */,
+				4C7333782051148800A1D6F0 /* YBAddressPickerView.h */,
+				4C7333792051148800A1D6F0 /* YBAddressPickerView.m */,
+				4C73337A2051148800A1D6F0 /* YBCity.plist */,
 			);
 			path = AddressPickerView;
 			sourceTree = "<group>";
@@ -298,8 +298,8 @@
 		4C73337F2051148800A1D6F0 /* DatePickerView */ = {
 			isa = PBXGroup;
 			children = (
-				4C7333802051148800A1D6F0 /* BRDatePickerView.h */,
-				4C7333812051148800A1D6F0 /* BRDatePickerView.m */,
+				4C7333802051148800A1D6F0 /* YBDatePickerView.h */,
+				4C7333812051148800A1D6F0 /* YBDatePickerView.m */,
 			);
 			path = DatePickerView;
 			sourceTree = "<group>";
@@ -307,8 +307,8 @@
 		4C7333822051148800A1D6F0 /* StringPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				4C7333832051148800A1D6F0 /* BRStringPickerView.h */,
-				4C7333842051148800A1D6F0 /* BRStringPickerView.m */,
+				4C7333832051148800A1D6F0 /* YBStringPickerView.h */,
+				4C7333842051148800A1D6F0 /* YBStringPickerView.m */,
 			);
 			path = StringPickerView;
 			sourceTree = "<group>";
@@ -442,7 +442,7 @@
 				4C63F85020044E2500276F9D /* LaunchScreen.storyboard in Resources */,
 				4C63F84D20044E2500276F9D /* Assets.xcassets in Resources */,
 				4C63F84B20044E2500276F9D /* Main.storyboard in Resources */,
-				4C73338E2051148800A1D6F0 /* BRCity.plist in Resources */,
+				4C73338E2051148800A1D6F0 /* YBCity.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,19 +471,19 @@
 				4C6507B6204F7EA700036C7F /* YBSecurityPolicy.m in Sources */,
 				4C7333732051147E00A1D6F0 /* TestViewController.m in Sources */,
 				4C6507B9204F7EA700036C7F /* YBURLSessionManager.m in Sources */,
-				4C7333912051148800A1D6F0 /* BRStringPickerView.m in Sources */,
-				4C73338D2051148800A1D6F0 /* BRAddressPickerView.m in Sources */,
+				4C7333912051148800A1D6F0 /* YBStringPickerView.m in Sources */,
+				4C73338D2051148800A1D6F0 /* YBAddressPickerView.m in Sources */,
 				4C63F84820044E2500276F9D /* ViewController.m in Sources */,
-				4C7333902051148800A1D6F0 /* BRDatePickerView.m in Sources */,
+				4C7333902051148800A1D6F0 /* YBDatePickerView.m in Sources */,
 				4C7333932051148800A1D6F0 /* YYClassInfo.m in Sources */,
 				4C6507BA204F7EA700036C7F /* RegularVerification.m in Sources */,
-				4C7333712051147E00A1D6F0 /* BRTextField.m in Sources */,
-				4C73338C2051148800A1D6F0 /* BRAddressModel.m in Sources */,
+				4C7333712051147E00A1D6F0 /* YBTextField.m in Sources */,
+				4C73338C2051148800A1D6F0 /* YBAddressModel.m in Sources */,
 				4C6507B8204F7EA700036C7F /* YBURLResponseSerialization.m in Sources */,
 				4C6507B7204F7EA700036C7F /* YBURLRequestSerialization.m in Sources */,
 				4C6507B5204F7EA700036C7F /* YBNetworkReachabilityManager.m in Sources */,
 				4C73338F2051148800A1D6F0 /* BaseView.m in Sources */,
-				4C7333722051147E00A1D6F0 /* NSDate+BRAdd.m in Sources */,
+				4C7333722051147E00A1D6F0 /* NSDate+YBAdd.m in Sources */,
 				4C63F85320044E2500276F9D /* main.m in Sources */,
 				4C63F84520044E2500276F9D /* AppDelegate.m in Sources */,
 				4C6507B4204F7EA700036C7F /* YBHTTPSessionManager.m in Sources */,

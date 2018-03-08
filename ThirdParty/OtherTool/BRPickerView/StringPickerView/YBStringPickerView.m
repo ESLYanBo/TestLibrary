@@ -1,15 +1,15 @@
 //
-//  BRStringPickerView.m
-//  BRPickerViewDemo
+//  YBStringPickerView.m
+//  YBPickerViewDemo
 //
 //  Created by 王晨辉 on 2018/3/1.
 //  Copyright © 2018年 王晨辉. All rights reserved.
 //
 //  最新代码下载地址：https://github.com/ESLYanBo/TestLibrary.git
 
-#import "BRStringPickerView.h"
+#import "YBStringPickerView.h"
 
-@interface BRStringPickerView ()<UIPickerViewDelegate,UIPickerViewDataSource>
+@interface YBStringPickerView ()<UIPickerViewDelegate,UIPickerViewDataSource>
 // 字符串选择器(默认大小: 320px × 216px)
 @property (nonatomic, strong) UIPickerView *pickerView;
 // 是否是单列
@@ -20,7 +20,7 @@
 @property (nonatomic, strong) NSArray  *dataSource;
 // 是否开启自动选择
 @property (nonatomic, assign) BOOL isAutoSelect;
-@property (nonatomic, copy) BRStringResultBlock resultBlock;
+@property (nonatomic, copy) YBStringResultBlock resultBlock;
 // 单列选中的项
 @property (nonatomic, copy) NSString *selectedItem;
 // 多列选中的项
@@ -28,18 +28,18 @@
 
 @end
 
-@implementation BRStringPickerView
+@implementation YBStringPickerView
 
 #pragma mark - 显示自定义字符串选择器
 + (void)showStringPickerWithTitle:(NSString *)title
                        dataSource:(NSArray *)dataSource
                   defaultSelValue:(id)defaultSelValue
                      isAutoSelect:(BOOL)isAutoSelect
-                      resultBlock:(BRStringResultBlock)resultBlock {
+                      resultBlock:(YBStringResultBlock)resultBlock {
     if (dataSource == nil || dataSource.count == 0) {
         return;
     }
-    BRStringPickerView *strPickerView = [[BRStringPickerView alloc]initWithTitle:title dataSource:dataSource defaultSelValue:defaultSelValue isAutoSelect:isAutoSelect resultBlock:resultBlock];
+    YBStringPickerView *strPickerView = [[YBStringPickerView alloc]initWithTitle:title dataSource:dataSource defaultSelValue:defaultSelValue isAutoSelect:isAutoSelect resultBlock:resultBlock];
     [strPickerView showWithAnimation:YES];
 }
 
@@ -48,13 +48,13 @@
                         plistName:(NSString *)plistName
                   defaultSelValue:(id)defaultSelValue
                      isAutoSelect:(BOOL)isAutoSelect
-                      resultBlock:(BRStringResultBlock)resultBlock {
+                      resultBlock:(YBStringResultBlock)resultBlock {
     if (plistName == nil || plistName.length == 0) {
         return;
     }
     NSString *path = [[NSBundle mainBundle] pathForResource:plistName ofType:@"plist"];
     NSArray *dataSource =[[NSArray alloc] initWithContentsOfFile:path];
-    BRStringPickerView *strPickerView = [[BRStringPickerView alloc]initWithTitle:title dataSource:dataSource defaultSelValue:defaultSelValue isAutoSelect:isAutoSelect resultBlock:resultBlock];
+    YBStringPickerView *strPickerView = [[YBStringPickerView alloc]initWithTitle:title dataSource:dataSource defaultSelValue:defaultSelValue isAutoSelect:isAutoSelect resultBlock:resultBlock];
     [strPickerView showWithAnimation:YES];
 }
 
@@ -64,7 +64,7 @@
                    dataSource:(NSArray *)dataSource
               defaultSelValue:(id)defaultSelValue
                  isAutoSelect:(BOOL)isAutoSelect
-                  resultBlock:(BRStringResultBlock)resultBlock {
+                  resultBlock:(YBStringResultBlock)resultBlock {
     if (self = [super init]) {
         self.title = title;
         self.dataSource = dataSource;

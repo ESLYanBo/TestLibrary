@@ -1,6 +1,6 @@
 //
-//  BRAddressPickerView.h
-//  BRPickerViewDemo
+//  YBAddressPickerView.h
+//  YBPickerViewDemo
 //
 //  Created by 王晨辉 on 2018/3/1.
 //  Copyright © 2018年 王晨辉. All rights reserved.
@@ -9,9 +9,9 @@
 
 #import "BaseView.h"
 
-typedef void(^BRAddressResultBlock)(NSArray *selectAddressArr);
+typedef void(^YBAddressResultBlock)(NSArray *selectAddressArr);
 
-@interface BRAddressPickerView : BaseView
+@interface YBAddressPickerView : BaseView
 /**
  *  显示地址选择器
  *
@@ -20,6 +20,6 @@ typedef void(^BRAddressResultBlock)(NSArray *selectAddressArr);
  *  @param resultBlock              选择后的回调
  *
  */
-+ (void)showAddressPickerWithDefaultSelected:(NSArray *)defaultSelectedArr isAutoSelect:(BOOL)isAutoSelect resultBlock:(BRAddressResultBlock)resultBlock;
++ (void)showAddressPickerWithDefaultSelected:(NSArray *)defaultSelectedArr isAutoSelect:(BOOL)isAutoSelect resultBlock:(YBAddressResultBlock)resultBlock;
 
 @end

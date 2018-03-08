@@ -1,15 +1,15 @@
 //
-//  NSDate+BRAdd.m
-//  BRPickerViewDemo
+//  NSDate+YBAdd.m
+//  YBPickerViewDemo
 //
 //  Created by 王晨辉 on 2018/3/1.
 //  Copyright © 2018年 王晨辉. All rights reserved.
 //
 //  最新代码下载地址：https://github.com/ESLYanBo/TestLibrary.git
 
-#import "NSDate+BRAdd.h"
+#import "NSDate+YBAdd.h"
 
-@implementation NSDate (BRAdd)
+@implementation NSDate (YBAdd)
 
 #pragma mark - 获取当前的时间
 + (NSString *)currentDateString {

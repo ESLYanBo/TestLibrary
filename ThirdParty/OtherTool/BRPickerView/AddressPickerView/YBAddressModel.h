@@ -1,6 +1,6 @@
 //
-//  BRAddressModel.h
-//  BRPickerViewDemo
+//  YBAddressModel.h
+//  YBPickerViewDemo
 //
 //  Created by 王晨辉 on 2018/3/1.
 //  Copyright © 2018年 王晨辉. All rights reserved.
@@ -9,16 +9,16 @@
 
 #import <Foundation/Foundation.h>
 
-@class BRProvinceModel, BRCityModel, BRTownModel;
+@class YBProvinceModel, YBCityModel, YBTownModel;
 
-@interface BRProvinceModel : NSObject
+@interface YBProvinceModel : NSObject
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) NSArray *city;
 
 @end
 
-@interface BRCityModel : NSObject
+@interface YBCityModel : NSObject
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) NSArray *town;
@@ -26,7 +26,7 @@
 @end
 
 
-@interface BRTownModel : NSObject
+@interface YBTownModel : NSObject
 
 @property (nonatomic, copy) NSString *name;
 

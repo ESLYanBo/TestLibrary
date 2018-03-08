@@ -1,6 +1,6 @@
 //
-//  BRDatePickerView.h
-//  BRPickerViewDemo
+//  YBDatePickerView.h
+//  YBPickerViewDemo
 //
 //  Created by 王晨辉 on 2018/3/1.
 //  Copyright © 2018年 王晨辉. All rights reserved.
@@ -9,9 +9,9 @@
 
 #import "BaseView.h"
 
-typedef void(^BRDateResultBlock)(NSString *selectValue);
+typedef void(^YBDateResultBlock)(NSString *selectValue);
 
-@interface BRDatePickerView : BaseView
+@interface YBDatePickerView : BaseView
 /**
  *  显示时间选择器
  *
@@ -24,6 +24,6 @@ typedef void(^BRDateResultBlock)(NSString *selectValue);
  *  @param resultBlock      选择结果的回调
  *
  */
-+ (void)showDatePickerWithTitle:(NSString *)title dateType:(UIDatePickerMode)type defaultSelValue:(NSString *)defaultSelValue minDateStr:(NSString *)minDateStr maxDateStr:(NSString *)maxDateStr isAutoSelect:(BOOL)isAutoSelect resultBlock:(BRDateResultBlock)resultBlock;
++ (void)showDatePickerWithTitle:(NSString *)title dateType:(UIDatePickerMode)type defaultSelValue:(NSString *)defaultSelValue minDateStr:(NSString *)minDateStr maxDateStr:(NSString *)maxDateStr isAutoSelect:(BOOL)isAutoSelect resultBlock:(YBDateResultBlock)resultBlock;
 
 @end

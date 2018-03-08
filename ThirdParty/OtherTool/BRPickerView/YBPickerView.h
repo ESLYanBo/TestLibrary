@@ -1,5 +1,5 @@
 //
-//  TestViewController.h
+//  YBPickerView.h
 //  YBPickerViewDemo
 //
 //  Created by 王晨辉 on 2018/3/1.
@@ -7,8 +7,11 @@
 //
 //  最新代码下载地址：https://github.com/ESLYanBo/TestLibrary.git
 
-#import <UIKit/UIKit.h>
+#ifndef YBPickerView_h
+#define YBPickerView_h
 
-@interface TestViewController : UIViewController
+#import "YBDatePickerView.h"
+#import "YBAddressPickerView.h"
+#import "YBStringPickerView.h"
 
-@end
+#endif /* YBPickerView_h */

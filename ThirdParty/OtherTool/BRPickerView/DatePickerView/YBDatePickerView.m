@@ -1,21 +1,21 @@
 //
-//  BRDatePickerView.m
-//  BRPickerViewDemo
+//  YBDatePickerView.m
+//  YBPickerViewDemo
 //
 //  Created by 王晨辉 on 2018/3/1.
 //  Copyright © 2018年 王晨辉. All rights reserved.
 //
 //  最新代码下载地址：https://github.com/ESLYanBo/TestLibrary.git
 
-#import "BRDatePickerView.h"
+#import "YBDatePickerView.h"
 
-@interface BRDatePickerView ()
+@interface YBDatePickerView ()
 {
     UIDatePickerMode _datePickerMode;
     NSString *_title;
     NSString *_minDateStr;
     NSString *_maxDateStr;
-    BRDateResultBlock _resultBlock;
+    YBDateResultBlock _resultBlock;
     NSString *_selectValue;
     BOOL _isAutoSelect;  // 是否开启自动选择
 }
@@ -24,16 +24,16 @@
 
 @end
 
-@implementation BRDatePickerView
+@implementation YBDatePickerView
 
 #pragma mark - 显示时间选择器
-+ (void)showDatePickerWithTitle:(NSString *)title dateType:(UIDatePickerMode)type defaultSelValue:(NSString *)defaultSelValue minDateStr:(NSString *)minDateStr maxDateStr:(NSString *)maxDateStr isAutoSelect:(BOOL)isAutoSelect resultBlock:(BRDateResultBlock)resultBlock {
-    BRDatePickerView *datePickerView = [[BRDatePickerView alloc]initWithTitle:title dateType:type defaultSelValue:defaultSelValue minDateStr:(NSString *)minDateStr maxDateStr:(NSString *)maxDateStr isAutoSelect:isAutoSelect resultBlock:resultBlock];
++ (void)showDatePickerWithTitle:(NSString *)title dateType:(UIDatePickerMode)type defaultSelValue:(NSString *)defaultSelValue minDateStr:(NSString *)minDateStr maxDateStr:(NSString *)maxDateStr isAutoSelect:(BOOL)isAutoSelect resultBlock:(YBDateResultBlock)resultBlock {
+    YBDatePickerView *datePickerView = [[YBDatePickerView alloc]initWithTitle:title dateType:type defaultSelValue:defaultSelValue minDateStr:(NSString *)minDateStr maxDateStr:(NSString *)maxDateStr isAutoSelect:isAutoSelect resultBlock:resultBlock];
     [datePickerView showWithAnimation:YES];
 }
 
 #pragma mark - 初始化时间选择器
-- (instancetype)initWithTitle:(NSString *)title dateType:(UIDatePickerMode)type defaultSelValue:(NSString *)defaultSelValue minDateStr:(NSString *)minDateStr maxDateStr:(NSString *)maxDateStr isAutoSelect:(BOOL)isAutoSelect resultBlock:(BRDateResultBlock)resultBlock {
+- (instancetype)initWithTitle:(NSString *)title dateType:(UIDatePickerMode)type defaultSelValue:(NSString *)defaultSelValue minDateStr:(NSString *)minDateStr maxDateStr:(NSString *)maxDateStr isAutoSelect:(BOOL)isAutoSelect resultBlock:(YBDateResultBlock)resultBlock {
     if (self = [super init]) {
         _datePickerMode = type;
         _title = title;

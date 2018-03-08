@@ -1,6 +1,6 @@
 //
-//  BRStringPickerView.h
-//  BRPickerViewDemo
+//  YBStringPickerView.h
+//  YBPickerViewDemo
 //
 //  Created by 王晨辉 on 2018/3/1.
 //  Copyright © 2018年 王晨辉. All rights reserved.
@@ -9,9 +9,9 @@
 
 #import "BaseView.h"
 
-typedef void(^BRStringResultBlock)(id selectValue);
+typedef void(^YBStringResultBlock)(id selectValue);
 
-@interface BRStringPickerView : BaseView
+@interface YBStringPickerView : BaseView
 
 /**
  *  显示自定义字符串选择器
@@ -27,7 +27,7 @@ typedef void(^BRStringResultBlock)(id selectValue);
                        dataSource:(NSArray *)dataSource
                   defaultSelValue:(id)defaultSelValue
                      isAutoSelect:(BOOL)isAutoSelect
-                      resultBlock:(BRStringResultBlock)resultBlock;
+                      resultBlock:(YBStringResultBlock)resultBlock;
 
 /**
  *  显示自定义字符串选择器
@@ -43,6 +43,6 @@ typedef void(^BRStringResultBlock)(id selectValue);
                         plistName:(NSString *)plistName
                   defaultSelValue:(id)defaultSelValue
                      isAutoSelect:(BOOL)isAutoSelect
-                      resultBlock:(BRStringResultBlock)resultBlock;
+                      resultBlock:(YBStringResultBlock)resultBlock;
 
 @end

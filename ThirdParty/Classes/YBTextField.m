@@ -1,27 +1,27 @@
 //
-//  BRTextField.m
-//  BRPickerViewDemo
+//  YBTextField.m
+//  YBPickerViewDemo
 //
 //  Created by 王晨辉 on 2018/3/1.
 //  Copyright © 2018年 王晨辉. All rights reserved.
 //
 //  最新代码下载地址：https://github.com/ESLYanBo/TestLibrary.git
 
-#import "BRTextField.h"
+#import "YBTextField.h"
 
-@interface BRTextField ()
+@interface YBTextField ()
 @property (nonatomic, strong) UIView *tapView;
 
 @end
 
-@implementation BRTextField
+@implementation YBTextField
 
-- (void)setTapAcitonBlock:(BRTapAcitonBlock)tapAcitonBlock {
+- (void)setTapAcitonBlock:(YBTapAcitonBlock)tapAcitonBlock {
     _tapAcitonBlock = tapAcitonBlock;
     self.tapView.hidden = NO;
 }
 
-- (void)setEndEditBlock:(BREndEditBlock)endEditBlock {
+- (void)setEndEditBlock:(YBEndEditBlock)endEditBlock {
     _endEditBlock = endEditBlock;
     [self addTarget:self action:@selector(didEndEditTextField:) forControlEvents:UIControlEventEditingDidEnd];
 }

@@ -1,6 +1,6 @@
 //
-//  NSDate+BRAdd.h
-//  BRPickerViewDemo
+//  NSDate+YBAdd.h
+//  YBPickerViewDemo
 //
 //  Created by 王晨辉 on 2018/3/1.
 //  Copyright © 2018年 王晨辉. All rights reserved.
@@ -9,7 +9,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSDate (BRAdd)
+@interface NSDate (YBAdd)
 /** 获取当前的时间 */
 + (NSString *)currentDateString;
 

@@ -1,17 +1,17 @@
 //
-//  BRAddressPickerView.m
-//  BRPickerViewDemo
+//  YBAddressPickerView.m
+//  YBPickerViewDemo
 //
 //  Created by 王晨辉 on 2018/3/1.
 //  Copyright © 2018年 王晨辉. All rights reserved.
 //
 //  最新代码下载地址：https://github.com/ESLYanBo/TestLibrary.git
 
-#import "BRAddressPickerView.h"
-#import "BRAddressModel.h"
+#import "YBAddressPickerView.h"
+#import "YBAddressModel.h"
 #import "YYModel.h"
 
-@interface BRAddressPickerView ()<UIPickerViewDelegate,UIPickerViewDataSource>
+@interface YBAddressPickerView ()<UIPickerViewDelegate,UIPickerViewDataSource>
 {
     NSInteger rowOfProvince; // 保存省份对应的下标
     NSInteger rowOfCity;     // 保存市对应的下标
@@ -27,20 +27,20 @@
 // 是否开启自动选择
 @property (nonatomic, assign) BOOL isAutoSelect;
 // 选中后的回调
-@property (nonatomic, copy) BRAddressResultBlock resultBlock;
+@property (nonatomic, copy) YBAddressResultBlock resultBlock;
 
 @end
 
-@implementation BRAddressPickerView
+@implementation YBAddressPickerView
 
 #pragma mark - 显示地址选择器
-+ (void)showAddressPickerWithDefaultSelected:(NSArray *)defaultSelectedArr isAutoSelect:(BOOL)isAutoSelect resultBlock:(BRAddressResultBlock)resultBlock {
-    BRAddressPickerView *addressPickerView = [[BRAddressPickerView alloc] initWithDefaultSelected:defaultSelectedArr isAutoSelect:isAutoSelect resultBlock:resultBlock];
++ (void)showAddressPickerWithDefaultSelected:(NSArray *)defaultSelectedArr isAutoSelect:(BOOL)isAutoSelect resultBlock:(YBAddressResultBlock)resultBlock {
+    YBAddressPickerView *addressPickerView = [[YBAddressPickerView alloc] initWithDefaultSelected:defaultSelectedArr isAutoSelect:isAutoSelect resultBlock:resultBlock];
     [addressPickerView showWithAnimation:YES];
 }
 
 #pragma mark - 初始化地址选择器
-- (instancetype)initWithDefaultSelected:(NSArray *)defaultSelectedArr isAutoSelect:(BOOL)isAutoSelect resultBlock:(BRAddressResultBlock)resultBlock {
+- (instancetype)initWithDefaultSelected:(NSArray *)defaultSelectedArr isAutoSelect:(BOOL)isAutoSelect resultBlock:(YBAddressResultBlock)resultBlock {
     if (self = [super init]) {
         // 默认选中
         if (defaultSelectedArr.count == 3) {
@@ -58,11 +58,11 @@
 
 #pragma mark - 获取地址数据
 - (void)loadData {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"BRCity" ofType:@"plist"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"YBCity" ofType:@"plist"];
     NSArray *arrData = [NSArray arrayWithContentsOfFile:filePath];
     for (NSDictionary *dic in arrData) {
         // 此处用 YYModel 进行解析
-        BRProvinceModel *proviceModel = [BRProvinceModel yy_modelWithDictionary:dic];
+        YBProvinceModel *proviceModel = [YBProvinceModel yy_modelWithDictionary:dic];
         [self.addressModelArr addObject:proviceModel];
     }
 }
@@ -171,8 +171,8 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    BRProvinceModel *provinceModel = self.addressModelArr[rowOfProvince];
-    BRCityModel *cityModel = provinceModel.city[rowOfCity];
+    YBProvinceModel *provinceModel = self.addressModelArr[rowOfProvince];
+    YBCityModel *cityModel = provinceModel.city[rowOfCity];
     if (component == 0) {
         //返回省个数
         return self.addressModelArr.count;
@@ -193,18 +193,18 @@
 - (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     NSString *showTitleValue = @"";
     if (component == 0) {//省
-        BRProvinceModel *provinceModel = self.addressModelArr[row];
+        YBProvinceModel *provinceModel = self.addressModelArr[row];
         showTitleValue = provinceModel.name;
     }
     if (component == 1) {//市
-        BRProvinceModel *provinceModel = self.addressModelArr[rowOfProvince];
-        BRCityModel *cityModel = provinceModel.city[row];
+        YBProvinceModel *provinceModel = self.addressModelArr[rowOfProvince];
+        YBCityModel *cityModel = provinceModel.city[row];
         showTitleValue = cityModel.name;
     }
     if (component == 2) {//区
-        BRProvinceModel *provinceModel = self.addressModelArr[rowOfProvince];
-        BRCityModel *cityModel = provinceModel.city[rowOfCity];
-        BRTownModel *townModel = cityModel.town[row];
+        YBProvinceModel *provinceModel = self.addressModelArr[rowOfProvince];
+        YBCityModel *cityModel = provinceModel.city[rowOfCity];
+        YBTownModel *townModel = cityModel.town[row];
         showTitleValue = townModel.name;
     }
     return showTitleValue;
@@ -245,11 +245,11 @@
 - (NSArray *)getChooseCityArr {
     NSArray *arr;
     if (rowOfProvince < self.addressModelArr.count) {
-        BRProvinceModel *provinceModel = self.addressModelArr[rowOfProvince];
+        YBProvinceModel *provinceModel = self.addressModelArr[rowOfProvince];
         if (rowOfCity < provinceModel.city.count) {
-            BRCityModel *cityModel = provinceModel.city[rowOfCity];
+            YBCityModel *cityModel = provinceModel.city[rowOfCity];
             if (rowOfTown < cityModel.town.count) {
-                BRTownModel *townModel = cityModel.town[rowOfTown];
+                YBTownModel *townModel = cityModel.town[rowOfTown];
                 arr = @[provinceModel.name, cityModel.name, townModel.name];
             }
         }
@@ -261,11 +261,11 @@
 - (void)scrollToRow:(NSInteger)firstRow secondRow:(NSInteger)secondRow thirdRow:(NSInteger)thirdRow {
     if (firstRow < self.addressModelArr.count) {
         rowOfProvince = firstRow;
-        BRProvinceModel *provinceModel = self.addressModelArr[firstRow];
+        YBProvinceModel *provinceModel = self.addressModelArr[firstRow];
         if (secondRow < provinceModel.city.count) {
             rowOfCity = secondRow;
             [self.pickerView reloadComponent:1];
-            BRCityModel *cityModel = provinceModel.city[secondRow];
+            YBCityModel *cityModel = provinceModel.city[secondRow];
             if (thirdRow < cityModel.town.count) {
                 rowOfTown = thirdRow;
                 [self.pickerView reloadComponent:2];
