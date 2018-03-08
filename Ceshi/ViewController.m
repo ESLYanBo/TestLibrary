@@ -18,11 +18,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addOtherView];
     // Do any additional setup after loading the view, typically from a nib.
 }
-- (IBAction)sendBtn:(UIButton *)sender {
-
-    if ([RegularVerification checkUserName:@"我的是你的"]) {
+- (void)addOtherView{
+    
+    UIButton * setBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    setBtn.frame = CGRectMake(50, 200, kSCREEN_WIDTH-100, 100);
+    setBtn.backgroundColor = [UIColor whiteColor];
+    kBorderRadius(setBtn, 4, 1, blackColor)
+    [setBtn addTarget:self action:@selector(setBtns:) forControlEvents:UIControlEventTouchUpInside];
+    [setBtn setTitle:@"点我一下" forState:UIControlStateNormal];
+    [setBtn setTitleColor:kRandomColor forState:UIControlStateNormal];
+    [self.view addSubview:setBtn];
+}
+- (void)setBtns:(UIButton *)sender{
+    if ([RegularVerification checkUserName:@"测试的"]) {
         NSLog(@"YES");
     }else{
         NSLog(@"NO");
